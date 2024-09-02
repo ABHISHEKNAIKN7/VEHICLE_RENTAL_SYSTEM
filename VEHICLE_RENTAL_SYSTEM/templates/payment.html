@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9f9f9;
+        }
+        button, .back-to-menu {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        button {
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .back-to-menu {
+            color: #007BFF;
+            border: 1px solid #007BFF;
+            background-color: #fff;
+        }
+        .back-to-menu:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: calc(100% - 22px); /* Adjust width to account for padding and border */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment</h1>
+        <h2>Pending Payments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Car ID</th>
+                    <th>Duration (hours)</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for payment in pending_payments %}
+                <tr>
+                    <td>{{ payment.car_id }}</td>
+                    <td>{{ payment.duration_hours }}</td>
+                    <td>${{ payment.total_cost }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form method="POST">
+            <label for="payment_amount">Enter Payment Amount:</label>
+            <input type="number" id="payment_amount" name="payment_amount" required>
+            <button type="submit">Make Payment</button>
+        </form>
+        <a class="back-to-menu" href="{{ url_for('customer_menu') }}">Back</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        a {
+            display: block;
+            width: 250px;
+            margin: 15px;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #fff;
+            background: linear-gradient(45deg, #ff6f61, #de6262);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        a:hover {
+            background: linear-gradient(45deg, #de6262, #ff6f61);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+            a {
+                width: 200px;
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO THE VEHICLE RENTAL SYSTEM</h1>
+    <a href="{{ url_for('admin_dashboard') }}">Admin Dashboard</a>
+    <a href="{{ url_for('customer_dashboard') }}">Customer Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Menu</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin: 20px 0;
+        }
+        a {
+            display: block;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        a:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+        .back-to-menu {
+            margin-top: 25px;
+            background-color: #6c757d;
+        }
+        .back-to-menu:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Customer Menu</h1>
+        <p><a href="{{ url_for('customer_view_cars') }}">View All Cars</a></p>
+        <p><a href="{{ url_for('book_car') }}">Book a Car</a></p>
+        <p><a href="{{ url_for('payment') }}">Make a Payment</a></p>
+        <a class="back-to-menu" href="{{ url_for('customer_dashboard') }}">Back</a>
+    </div>
+</body>
+</html>

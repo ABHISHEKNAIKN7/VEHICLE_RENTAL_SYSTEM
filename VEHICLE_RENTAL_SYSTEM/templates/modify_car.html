@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Car</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #6D83F2, #4A5ED2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #4A5ED2;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            padding: 25px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+        select, input[type="text"], input[type="number"] {
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        select:focus, input[type="text"]:focus, input[type="number"]:focus {
+            border-color: #4A5ED2;
+            outline: none;
+        }
+        input[type="submit"] {
+            padding: 15px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4A5ED2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #364FC7;
+            transform: translateY(-2px);
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #4A5ED2;
+            border: 2px solid #4A5ED2;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #4A5ED2;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Modify Car Details</h1>
+        <form action="{{ url_for('modify_car') }}" method="post">
+            <label for="car_id">Car ID:</label>
+            <select id="car_id" name="car_id" required>
+                {% for car in cars %}
+                <option value="{{ car.id }}">{{ car.id }} - {{ car.model }}</option>
+                {% endfor %}
+            </select>
+            <label for="new_model">New Car Model:</label>
+            <input type="text" id="new_model" name="new_model">
+            <label for="new_car_type">New Car Type:</label>
+            <input type="text" id="new_car_type" name="new_car_type">
+            <label for="new_transmission">New Transmission:</label>
+            <input type="text" id="new_transmission" name="new_transmission">
+            <label for="new_rate">New Hourly Rate:</label>
+            <input type="number" id="new_rate" name="new_rate" step="0.01">
+            <input type="submit" value="Update Car">
+        </form>
+        <a href="{{ url_for('admin_dashboard') }}" class="btn">Back</a>
+    </div>
+</body>
+</html>

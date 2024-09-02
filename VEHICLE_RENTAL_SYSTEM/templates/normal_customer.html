@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin: 20px 0;
+        }
+        .dashboard-menu {
+            margin: 20px;
+        }
+        .dashboard-menu a {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #0066cc;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .dashboard-menu a:hover {
+            background-color: #005bb5;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .logout {
+            margin-top: 20px;
+        }
+        .logout a {
+            font-size: 18px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .logout a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Dashboard</h1>
+    <div class="dashboard-menu">
+        <a href="{{ url_for('view_all_cars') }}">View All Cars</a>
+        <a href="{{ url_for('register_customer') }}">Register</a>
+    </div>
+    <div class="logout">
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>

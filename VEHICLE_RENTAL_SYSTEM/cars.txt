@@ -1,0 +1,28 @@
+165292,Ford Fiesta,Hatchback,Automatic,20
+238311,Toyota Corolla,Sedan,Manual,22
+292500,Land Rover Range Rover,SUV,Automatic,100
+174074,BMW X5,SUV,Automatic,35
+177062,Audi A4,Sedan,Manual,28
+314111,Mercedes-Benz C-Class,Sedan,Automatic,30
+106034,Volkswagen Golf,Hatchback,Automatic,35
+143228,Chevrolet Malibu,Sedan,Automatic,23
+266580,Subaru Forester,SUV,Automatic,28
+224540,Nissan Altima,Sedan,Automatic,35
+149389,Hyundai Elantra,Sedan,Manual,23
+187668,Kia Sorento,SUV,Automatic,35
+275878,Ford Mustang,Coupe,Manual,40
+219980,Jeep Wrangler,SUV,Automatic,32
+303844,Toyota RAV4,SUV,Automatic,25
+147908,Honda Accord,Sedan,Automatic,26
+105694,Mazda CX-5,SUV,Manual,39
+273345,BMW 3 Series,Sedan,Automatic,50
+144999,Chevrolet Tahoe,SUV,Automatic,62
+266120,Audi Q7,SUV,Automatic,68
+265037,Volvo XC60,SUV,Automatic,50
+149598,Jaguar F-Pace,SUV,Automatic,58
+354845,Lexus RX,SUV,Automatic,48
+225466,Porsche Macan,SUV,Automatic,35
+162831,Infiniti QX60,SUV,Automatic,36
+242977,Mercedes-Benz GLC,SUV,Automatic,80
+168978,Acura MDX,SUV,Automatic,55
+486276,Land Rover Discovery,SUV,Automatic,100

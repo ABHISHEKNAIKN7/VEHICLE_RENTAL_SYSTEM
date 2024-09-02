@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #3498db, #8e44ad);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .dashboard-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+        }
+        .dashboard-menu a {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            background-color: #2980b9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+            text-align: center;
+        }
+        .dashboard-menu a:hover {
+            background-color: #1abc9c;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            transform: translateY(-3px);
+        }
+        .logout {
+            margin-top: 30px;
+        }
+        .logout a {
+            font-size: 1.1em;
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .logout a:hover {
+            border-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <div class="dashboard-menu">
+        <a href="{{ url_for('add_car') }}">Add Car</a>
+        <a href="{{ url_for('view_cars') }}">View Cars</a>
+        <a href="{{ url_for('modify_car') }}">Modify Car</a>
+        <a href="{{ url_for('remove_car') }}">Remove Car</a>
+    </div>
+    <div class="logout">
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
