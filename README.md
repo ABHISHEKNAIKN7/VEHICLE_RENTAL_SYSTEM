@@ -42,6 +42,10 @@ pip install -r requirements.txt
 
 flask run
 
+
+
+## There are some unnecessary files. You can delete those files.
+
 ## To run the file
 
 python app.py
