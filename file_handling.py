@@ -1,6 +1,20 @@
 import uuid
+import os
+import shutil
 
 DEFAULT_CAR_IMAGE = "/static/vehicle-placeholder.svg"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.environ.get("DATA_DIR", "/tmp/vehicle_rental_data")
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR, exist_ok=True)
+
+
+def data_file_path(filename):
+    runtime_path = os.path.join(DATA_DIR, filename)
+    source_path = os.path.join(BASE_DIR, filename)
+    if not os.path.exists(runtime_path) and os.path.exists(source_path):
+        shutil.copyfile(source_path, runtime_path)
+    return runtime_path
 
 
 def normalize_image_url(image_url):
@@ -14,7 +28,7 @@ def generate_unique_id():
 
 # Save car data to 'cars.txt'
 def save_car(car):
-    with open('cars.txt', 'a') as f:
+    with open(data_file_path('cars.txt'), 'a') as f:
         f.write(
             f"{car['id']},{car['model']},{car['car_type']},{car['transmission']},{car['rate']},{normalize_image_url(car.get('image_url'))}\n"
         )
@@ -23,7 +37,7 @@ def save_car(car):
 def get_all_cars():
     cars = []
     try:
-        with open('cars.txt', 'r') as f:
+        with open(data_file_path('cars.txt'), 'r') as f:
             for line in f:
                 parts = line.rstrip('\n').split(',', 5)
                 if len(parts) >= 5:  # ID, Model, Type, Transmission, Rate, optional image_url
@@ -67,7 +81,7 @@ def get_car_by_id(car_id):
 # Update car details by ID
 def update_car(car_id, new_model, new_car_type, new_transmission, new_rate, new_image_url=''):
     cars = get_all_cars()
-    with open('cars.txt', 'w') as f:
+    with open(data_file_path('cars.txt'), 'w') as f:
         for car in cars:
             if car['id'] == car_id:
                 updated_model = new_model.strip() if new_model.strip() else car['model']
@@ -86,7 +100,7 @@ def update_car(car_id, new_model, new_car_type, new_transmission, new_rate, new_
 # Remove a car by ID
 def remove_car(car_id):
     cars = get_all_cars()
-    with open('cars.txt', 'w') as f:
+    with open(data_file_path('cars.txt'), 'w') as f:
         for car in cars:
             if car['id'] != car_id:
                 f.write(
@@ -95,13 +109,13 @@ def remove_car(car_id):
 
 # Register a new user in 'users.txt'
 def register_user(username, password):
-    with open('users.txt', 'a') as f:
+    with open(data_file_path('users.txt'), 'a') as f:
         f.write(f"{username},{password}\n")
 
 # Validate user login credentials from 'users.txt'
 def validate_user(username, password):
     try:
-        with open('users.txt', 'r') as f:
+        with open(data_file_path('users.txt'), 'r') as f:
             for line in f:
                 parts = line.strip().split(',')
                 if len(parts) == 2:
@@ -121,13 +135,13 @@ def validate_user(username, password):
 # Get rental history for a user
 
 def book_car(username, car_id, duration_hours, total_cost):
-    with open('rentals.txt', 'a') as f:
+    with open(data_file_path('rentals.txt'), 'a') as f:
         f.write(f"{username},{car_id},{duration_hours},{total_cost},pending\n")
 
 def get_rental_history(username):
     history = []
     try:
-        with open('rentals.txt', 'r') as f:
+        with open(data_file_path('rentals.txt'), 'r') as f:
             for line in f:
                 parts = line.strip().split(',')
                 if len(parts) == 5:
@@ -141,7 +155,7 @@ def get_rental_history(username):
 def get_pending_payments(username):
     pending_payments = []
     try:
-        with open('rentals.txt', 'r') as f:
+        with open(data_file_path('rentals.txt'), 'r') as f:
             for line in f:
                 parts = line.strip().split(',')
                 if len(parts) == 5:
@@ -168,7 +182,7 @@ def process_payment(username, payment_amount):
 
 def update_rental_status(username, car_id, new_status):
     rentals = get_rental_history(username)
-    with open('rentals.txt', 'w') as f:
+    with open(data_file_path('rentals.txt'), 'w') as f:
         for rental in rentals:
             if rental['car_id'] == car_id:
                 f.write(f"{username},{car_id},{rental['duration_hours']},{rental['total_cost']},{new_status}\n")
