@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">Vehicle placeholder</title>
+  <desc id="desc">Placeholder image for vehicle listing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="car" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <g opacity="0.16" fill="#ffffff">
+    <circle cx="110" cy="72" r="26"/>
+    <circle cx="560" cy="310" r="42"/>
+    <circle cx="486" cy="44" r="18"/>
+  </g>
+  <g transform="translate(120 135)">
+    <rect x="40" y="40" width="330" height="72" rx="30" fill="url(#car)"/>
+    <path d="M96 40 L145 0 H275 C297 0 315 14 322 34 L330 40 Z" fill="url(#car)"/>
+    <rect x="154" y="12" width="106" height="28" rx="10" fill="#0f172a" opacity="0.8"/>
+    <circle cx="108" cy="116" r="28" fill="#111827"/>
+    <circle cx="108" cy="116" r="12" fill="#cbd5e1"/>
+    <circle cx="310" cy="116" r="28" fill="#111827"/>
+    <circle cx="310" cy="116" r="12" fill="#cbd5e1"/>
+  </g>
+  <text x="320" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#94a3b8">No vehicle image provided</text>
+</svg>

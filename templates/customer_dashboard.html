@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Customer Dashboard{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Customer Dashboard</h1>
+    <p class="lead">New here? Create an account. Already registered? Sign in and start booking.</p>
+</section>
+
+<section class="grid">
+    <a class="card" href="{{ url_for('new_user') }}">
+        <h3>New User Registration</h3>
+        <p>Set up your account with contact details and credentials.</p>
+    </a>
+    <a class="card" href="{{ url_for('registered_user') }}">
+        <h3>Registered User Login</h3>
+        <p>Continue to your booking menu and payment options.</p>
+    </a>
+</section>
+{% endblock %}

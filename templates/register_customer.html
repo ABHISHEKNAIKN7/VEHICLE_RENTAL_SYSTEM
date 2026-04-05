@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin: 20px 0;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="password"] {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 15px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #0066cc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        input[type="submit"]:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>Register New Customer</h1>
+    <div class="form-container">
+        <form action="{{ url_for('register_customer') }}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required aria-label="Full Name">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required aria-label="Phone Number">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required aria-label="Email Address">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required aria-label="Age">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required aria-label="Password">
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

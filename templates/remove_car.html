@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Remove Car{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Remove Car</h1>
+    <p class="lead">Delete cars that are no longer available for rental.</p>
+</section>
+
+<section class="panel">
+    <form action="{{ url_for('remove_car') }}" method="post">
+        <label for="car_id">Select Car ID to Remove</label>
+        <select id="car_id" name="car_id" required>
+            {% for car in cars %}
+            <option value="{{ car.id }}">{{ car.id }} - {{ car.model }}</option>
+            {% endfor %}
+        </select>
+        <div class="btn-row">
+            <button type="submit" class="btn danger">Remove Car</button>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn secondary">Back</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Admin Dashboard</h1>
+    <p class="lead">Control fleet inventory from one focused console.</p>
+</section>
+
+<section class="grid">
+    <a class="card" href="{{ url_for('add_car') }}">
+        <h3>Add Car</h3>
+        <p>Register a new car with model, type, transmission, and hourly rate.</p>
+    </a>
+    <a class="card" href="{{ url_for('view_cars') }}">
+        <h3>View Cars</h3>
+        <p>Browse the complete inventory in a clean data table.</p>
+    </a>
+    <a class="card" href="{{ url_for('modify_car') }}">
+        <h3>Modify Car</h3>
+        <p>Update details for any existing vehicle entry.</p>
+    </a>
+    <a class="card" href="{{ url_for('remove_car') }}">
+        <h3>Remove Car</h3>
+        <p>Remove obsolete listings from active inventory.</p>
+    </a>
+</section>
+{% endblock %}

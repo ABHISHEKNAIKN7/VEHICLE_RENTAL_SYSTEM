@@ -1,0 +1,14 @@
+{
+    "100180": {
+        "model": "toyato3",
+        "type": "manual",
+        "transmission": "4",
+        "hourly_rate": "30"
+    },
+    "161736": {
+        "model": "ga",
+        "type": "manual",
+        "transmission": "4",
+        "hourly_rate": "30"
+    }
+}

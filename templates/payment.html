@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Payment{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Payment</h1>
+    <p class="lead">Review pending rentals and pay the total amount due.</p>
+</section>
+
+<section class="panel">
+    <h3 style="margin-bottom: 10px;">Pending Payments</h3>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Car ID</th>
+                    <th>Duration (hours)</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for payment in pending_payments %}
+                <tr>
+                    <td>{{ payment.car_id }}</td>
+                    <td>{{ payment.duration_hours }}</td>
+                    <td>₹{{ payment.total_cost }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3">No pending payments.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <form method="POST" style="margin-top: 16px;">
+        <label for="payment_amount">Enter Payment Amount</label>
+        <input type="number" id="payment_amount" name="payment_amount" required>
+        <div class="btn-row">
+            <button type="submit" class="btn">Make Payment</button>
+            <a class="btn secondary" href="{{ url_for('customer_menu') }}">Back</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

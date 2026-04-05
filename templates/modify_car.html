@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Modify Car{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Modify Car Details</h1>
+    <p class="lead">Update model, type, transmission, or pricing for a selected car.</p>
+</section>
+
+<section class="panel">
+    <form action="{{ url_for('modify_car') }}" method="post">
+        <label for="car_id">Car ID</label>
+        <select id="car_id" name="car_id" required>
+            {% for car in cars %}
+            <option value="{{ car.id }}">{{ car.id }} - {{ car.model }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="new_model">New Car Model</label>
+        <input type="text" id="new_model" name="new_model">
+
+        <label for="new_car_type">New Car Type</label>
+        <input type="text" id="new_car_type" name="new_car_type">
+
+        <label for="new_transmission">New Transmission</label>
+        <input type="text" id="new_transmission" name="new_transmission">
+
+        <label for="new_rate">New Hourly Rate</label>
+        <input type="number" id="new_rate" name="new_rate" step="0.01">
+
+        <label for="new_image_url">New Image URL (optional)</label>
+        <input type="url" id="new_image_url" name="new_image_url" placeholder="https://example.com/car.jpg">
+
+        <div class="btn-row">
+            <button type="submit" class="btn">Update Car</button>
+            <a href="{{ url_for('admin_dashboard') }}" class="btn secondary">Back</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

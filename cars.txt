@@ -1,0 +1,28 @@
+165292,Ford Fiesta,Hatchback,Automatic,20,https://cdn.pixabay.com/photo/2022/07/04/10/46/vintage-car-7300881_640.jpg
+238311,Toyota Corolla,Sedan,Manual,22,https://cdn.pixabay.com/photo/2023/07/19/12/16/car-8136751_640.jpg
+292500,Land Rover Range Rover,SUV,Automatic,100,https://cdn.pixabay.com/photo/2016/02/13/13/11/oldtimer-1197800_640.jpg
+174074,BMW X5,SUV,Automatic,35,https://cdn.pixabay.com/photo/2024/12/05/11/08/opel-9246352_640.jpg
+177062,Audi A4,Sedan,Manual,28,https://cdn.pixabay.com/photo/2015/12/15/09/20/car-1093927_640.jpg
+314111,Mercedes-Benz C-Class,Sedan,Automatic,30,https://cdn.pixabay.com/photo/2016/11/21/15/56/car-1846103_640.jpg
+106034,Volkswagen Golf,Hatchback,Automatic,35,https://cdn.pixabay.com/photo/2022/07/04/10/46/vintage-car-7300881_640.jpg
+143228,Chevrolet Malibu,Sedan,Automatic,23,https://cdn.pixabay.com/photo/2023/07/19/12/16/car-8136751_640.jpg
+266580,Subaru Forester,SUV,Automatic,28,https://cdn.pixabay.com/photo/2016/02/13/13/11/oldtimer-1197800_640.jpg
+224540,Nissan Altima,Sedan,Automatic,35,https://cdn.pixabay.com/photo/2024/12/05/11/08/opel-9246352_640.jpg
+149389,Hyundai Elantra,Sedan,Manual,23,https://cdn.pixabay.com/photo/2015/12/15/09/20/car-1093927_640.jpg
+187668,Kia Sorento,SUV,Automatic,35,https://cdn.pixabay.com/photo/2016/11/21/15/56/car-1846103_640.jpg
+275878,Ford Mustang,Coupe,Manual,40,https://cdn.pixabay.com/photo/2022/07/04/10/46/vintage-car-7300881_640.jpg
+219980,Jeep Wrangler,SUV,Automatic,32,https://cdn.pixabay.com/photo/2023/07/19/12/16/car-8136751_640.jpg
+303844,Toyota RAV4,SUV,Automatic,25,https://cdn.pixabay.com/photo/2016/02/13/13/11/oldtimer-1197800_640.jpg
+147908,Honda Accord,Sedan,Automatic,26,https://cdn.pixabay.com/photo/2024/12/05/11/08/opel-9246352_640.jpg
+105694,Mazda CX-5,SUV,Manual,39,https://cdn.pixabay.com/photo/2015/12/15/09/20/car-1093927_640.jpg
+273345,BMW 3 Series,Sedan,Automatic,50,https://cdn.pixabay.com/photo/2016/11/21/15/56/car-1846103_640.jpg
+144999,Chevrolet Tahoe,SUV,Automatic,62,https://cdn.pixabay.com/photo/2022/07/04/10/46/vintage-car-7300881_640.jpg
+266120,Audi Q7,SUV,Automatic,68,https://cdn.pixabay.com/photo/2023/07/19/12/16/car-8136751_640.jpg
+265037,Volvo XC60,SUV,Automatic,50,https://cdn.pixabay.com/photo/2016/02/13/13/11/oldtimer-1197800_640.jpg
+149598,Jaguar F-Pace,SUV,Automatic,58,https://cdn.pixabay.com/photo/2024/12/05/11/08/opel-9246352_640.jpg
+354845,Lexus RX,SUV,Automatic,48,https://cdn.pixabay.com/photo/2015/12/15/09/20/car-1093927_640.jpg
+225466,Porsche Macan,SUV,Automatic,35,https://cdn.pixabay.com/photo/2016/11/21/15/56/car-1846103_640.jpg
+162831,Infiniti QX60,SUV,Automatic,36,https://cdn.pixabay.com/photo/2022/07/04/10/46/vintage-car-7300881_640.jpg
+242977,Mercedes-Benz GLC,SUV,Automatic,80,https://cdn.pixabay.com/photo/2023/07/19/12/16/car-8136751_640.jpg
+168978,Acura MDX,SUV,Automatic,55,https://cdn.pixabay.com/photo/2016/02/13/13/11/oldtimer-1197800_640.jpg
+486276,Land Rover Discovery,SUV,Automatic,100,https://cdn.pixabay.com/photo/2024/12/05/11/08/opel-9246352_640.jpg

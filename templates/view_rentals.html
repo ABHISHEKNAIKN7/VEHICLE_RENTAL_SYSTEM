@@ -1,0 +1,41 @@
+﻿{% extends "base.html" %}
+{% block title %}Rental History{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Rental History</h1>
+    <p class="lead">Track booking duration, cost, and payment status.</p>
+</section>
+
+<section class="panel">
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Car ID</th>
+                    <th>Duration (hours)</th>
+                    <th>Total Cost</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rental in rentals %}
+                <tr>
+                    <td>{{ rental.car_id }}</td>
+                    <td>{{ rental.duration_hours }}</td>
+                    <td>&#8377;{{ rental.total_cost }}</td>
+                    <td>{{ rental.status }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="4">No rentals found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="btn-row" style="margin-top: 14px;">
+        <a href="{{ url_for('customer_menu') }}" class="btn secondary">Back</a>
+    </div>
+</section>
+{% endblock %}
+

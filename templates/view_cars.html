@@ -1,0 +1,53 @@
+﻿{% extends "base.html" %}
+{% block title %}View Cars{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>All Cars</h1>
+    <p class="lead">Current inventory snapshot with pricing and transmission details.</p>
+</section>
+
+<section class="panel">
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>ID</th>
+                    <th>Model</th>
+                    <th>Type</th>
+                    <th>Transmission</th>
+                    <th>Hourly Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for car in cars %}
+                <tr>
+                    <td>
+                        <img
+                            class="vehicle-thumb"
+                            src="{{ car.image_url }}"
+                            alt="{{ car.model }} vehicle"
+                            loading="lazy"
+                            onerror="this.onerror=null;this.src='{{ url_for('static', filename='vehicle-placeholder.svg') }}';"
+                        >
+                    </td>
+                    <td>{{ car.id }}</td>
+                    <td>{{ car.model }}</td>
+                    <td>{{ car.car_type }}</td>
+                    <td>{{ car.transmission }}</td>
+                    <td>&#8377;{{ car.rate }}</td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="6">No cars added yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="btn-row" style="margin-top: 14px;">
+        <a href="{{ url_for('admin_dashboard') }}" class="btn secondary">Back</a>
+    </div>
+</section>
+{% endblock %}
+

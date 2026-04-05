@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Book a Car{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Book a Car</h1>
+    <p class="lead">Pick your car and enter rental duration in hours.</p>
+</section>
+
+<section class="panel">
+    <form method="POST">
+        <label for="car_id">Select Car</label>
+        <select id="car_id" name="car_id" required>
+            {% for car in cars %}
+            <option value="{{ car.id }}">{{ car.model }} - {{ car.car_type }} - ₹{{ car.rate }}/hour</option>
+            {% endfor %}
+        </select>
+
+        <label for="duration_hours">Duration (hours)</label>
+        <input type="number" id="duration_hours" name="duration_hours" required>
+
+        <div class="btn-row">
+            <button type="submit" class="btn">Book Car</button>
+            <a href="{{ url_for('customer_menu') }}" class="btn secondary">Back</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

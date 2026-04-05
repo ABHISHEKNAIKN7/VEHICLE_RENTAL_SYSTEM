@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Home | Vehicle Rental{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Reserve Smart. Drive Easy.</h1>
+    <p class="lead">A cleaner, faster way to manage rentals for admins and customers in one place.</p>
+</section>
+
+<section class="grid">
+    <a class="card" href="{{ url_for('login') }}">
+        <h3>Admin Dashboard</h3>
+        <p>Add, modify, and remove cars while managing the fleet view.</p>
+    </a>
+    <a class="card" href="{{ url_for('customer_dashboard') }}">
+        <h3>Customer Dashboard</h3>
+        <p>Register, explore available vehicles, book rides, and pay pending rentals.</p>
+    </a>
+</section>
+{% endblock %}

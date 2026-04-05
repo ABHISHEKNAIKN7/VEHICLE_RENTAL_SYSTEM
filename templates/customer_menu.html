@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Customer Menu{% endblock %}
+{% block content %}
+<section class="hero">
+    <h1>Customer Menu</h1>
+    <p class="lead">Pick an action to continue your rental journey.</p>
+</section>
+
+<section class="grid">
+    <a class="card" href="{{ url_for('customer_view_cars') }}">
+        <h3>View All Cars</h3>
+        <p>See available cars and their hourly pricing before booking.</p>
+    </a>
+    <a class="card" href="{{ url_for('book_car') }}">
+        <h3>Book a Car</h3>
+        <p>Select a vehicle and duration to create a new rental.</p>
+    </a>
+    <a class="card" href="{{ url_for('payment') }}">
+        <h3>Make a Payment</h3>
+        <p>Review pending rentals and clear outstanding amounts.</p>
+    </a>
+    <a class="card" href="{{ url_for('view_rentals') }}">
+        <h3>Rental History</h3>
+        <p>Track completed and pending rentals in one place.</p>
+    </a>
+</section>
+{% endblock %}

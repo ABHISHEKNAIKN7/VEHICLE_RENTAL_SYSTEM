@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .container { 
+            width: 80%; 
+            max-width: 600px; 
+            margin: 30px auto; 
+            padding: 20px; 
+            background-color: #fff; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }
+        h1 { 
+            color: #333; 
+            margin-bottom: 20px; 
+            font-size: 24px; 
+            text-align: center;
+        }
+        form { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        label { 
+            margin-top: 10px; 
+            font-weight: bold; 
+            color: #333;
+        }
+        input { 
+            margin-bottom: 20px; 
+            padding: 12px; 
+            font-size: 16px; 
+            border: 1px solid #ddd; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+        }
+        input[type="submit"] { 
+            background-color: #007bff; 
+            color: #fff; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 18px; 
+            padding: 12px; 
+            transition: background-color 0.3s; 
+        }
+        input[type="submit"]:hover { 
+            background-color: #0056b3; 
+        }
+        a { 
+            display: block; 
+            margin-top: 20px; 
+            text-decoration: none; 
+            color: #007bff; 
+            font-size: 18px; 
+            text-align: center;
+        }
+        a:hover { 
+            text-decoration: underline; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Car - {{ car.model }}</h1>
+        <form method="POST">
+            <label for="car_type">Car Type:</label>
+            <input type="text" id="car_type" name="car_type" value="{{ car.type }}" required>
+
+            <label for="car_transmission">Transmission:</label>
+            <input type="text" id="car_transmission" name="car_transmission" value="{{ car.transmission }}" required>
+
+            <label for="hourly_rate">Hourly Rate:</label>
+            <input type="text" id="hourly_rate" name="hourly_rate" value="{{ car.rate }}" required>
+
+            <input type="submit" value="Update Car">
+        </form>
+        <a href="{{ url_for('view_cars') }}">Back</a>
+    </div>
+</body>
+</html>
